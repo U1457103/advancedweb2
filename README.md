@@ -2,4 +2,4 @@
 
 U1457103
 Jhangir Dastgir
-Spring Framework
+DJango Framework
