@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Update User</title>
+</head>
+<body>
+
+<a href="/" th:href="@{/}">Home</a>
+<a href="/user/registeru" th:href="@{/user/registeru}">Register User</a>
+<a href="/user/loginu" th:href="@{/user/loginu}">Login</a>
+<a href="/user/logout" th:href="@{/user/logout}">Logout</a>
+
+
+<h2>Update User</h2>
+
+<form action="#" th:action="@{/user/updateu}" th:object="${user}" method="post">
+<input type="hidden" th:field="*{id}"/>
+<p>First Name: </p> <input type="text" th:field="*{firstname}" />
+    <p>Last Name: </p> <input type="text" th:field="*{lastname}" />
+    <p>Password: </p> <input type="text" th:field="*{password}" />
+
+    <p><input type="submit" value="Update" /></p>
+</form>
+
+
+</body>
+</html>

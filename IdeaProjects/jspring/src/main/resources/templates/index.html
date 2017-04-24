@@ -8,10 +8,14 @@
 
 
 <a href="/" th:href="@{/}">Home</a>
-<a href="/singer/register" th:href="@{/singer/register}">Add Singer</a>
+<a href="/user/registeru" th:href="@{/user/registeru}">Register User</a>
+<a href="/user/loginu" th:href="@{/user/loginu}">Login</a>
+<a href="/user/logout" th:href="@{/user/logout}">Logout</a>
 
 
 
+
+<P>Singers Table</P>
 
 <table border="1px">
     <tr>
@@ -29,6 +33,35 @@
         <td><a href="#" th:href="@{/singer/delete/}+${singer.id}">Delete</a> </td>
     </tr>
 </table>
+
+<a href="/singer/register" th:href="@{/singer/register}">Add Singer</a>
+
+
+
+<P>Users Table</P>
+
+<table border="1px">
+    <tr>
+        <th> First Name</th>
+        <th>Last Name</th>
+        <th>Password</th>
+        <th>Update User Info</th>
+        <th>Delete User</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.firstname}">Bob</td>
+        <td th:text="${user.lastname}">Lee</td>
+        <td th:text="${user.password}">password</td>
+        <td><a href="#" th:href="@{/user/update/}+${user.id}">Update</a> </td>
+        <td><a href="#" th:href="@{/user/delete/}+${user.id}">Delete</a> </td>
+    </tr>
+</table>
+
+<a href="/user/search" th:href="@{/user/search}">Search User</a>
+
+
+
+
 
 
 

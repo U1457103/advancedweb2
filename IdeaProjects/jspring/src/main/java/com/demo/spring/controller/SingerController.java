@@ -40,7 +40,7 @@ public class SingerController {
         }
 
         singerService.save(singer);
-        return "You have sucessfully Added " +singer.getSingername()+" "+singer.getSongname();
+        return "redirect:/";
     }
 
     @RequestMapping(value ="/update/{u}", method = RequestMethod.GET)

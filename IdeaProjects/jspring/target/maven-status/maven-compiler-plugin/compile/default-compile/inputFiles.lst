@@ -1,6 +1,12 @@
 /home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/Service/UserService.java
 /home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/controller/HomeController.java
+/home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/domain/LoginForm.java
+/home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/controller/SingerController.java
 /home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/controller/UserController.java
+/home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/domain/SingerRepository.java
 /home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/JprojectApplication.java
+/home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/domain/UserSearchForm.java
 /home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/domain/User.java
 /home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/domain/UserRepository.java
+/home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/domain/Singer.java
+/home/web/IdeaProjects/jspring/src/main/java/com/demo/spring/Service/SingerService.java

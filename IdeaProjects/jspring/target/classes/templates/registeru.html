@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
-    <title>Add The Singers!</title>
+    <title>Register User</title>
 </head>
 <body>
 
@@ -13,15 +13,17 @@
 
 
 
-<h2>Add Singer</h2>
 
-<form action="#" th:action="@{/singer/register}" th:object="${singer}" method="post">
 
-<p>Singer Name: </p> <input type="text" th:field="*{singername}" />
-    <p>Song Name: </p> <input type="text" th:field="*{songname}" />
-    <p>Add Comment </p> <input type="text" th:field="*{addcomment}" />
+<h2>Register Account</h2>
 
-    <p><input type="submit" value="Add Singer" /></p>
+<form action="#" th:action="@{/user/registeru}" th:object="${user}" method="post">
+
+    <p>First Name: </p> <input type="text" th:field="*{firstname}" />
+    <p>Last Name: </p> <input type="text" th:field="*{lastname}" />
+    <p>Password: </p> <input type="text" th:field="*{password}" />
+
+    <p><input type="submit" value="Register User" /></p>
 </form>
 
 <div th:if="${message!=null}">

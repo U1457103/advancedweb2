@@ -8,3 +8,5 @@ Spring Framework
 Updated with Spring work
 
 crud working
+
+login and logout works
