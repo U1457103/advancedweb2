@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Add The Singers!</title>
+</head>
+<body>
+
+<a href="/" th:href="@{/}">Home</a>
+<a href="/singer/register" th:href="@{/singer/register}">Add Singer</a>
+
+
+<h2>Add Singer</h2>
+
+<form action="#" th:action="@{/singer/register}" th:object="${singer}" method="post">
+
+<p>Singer Name: </p> <input type="text" th:field="*{singername}" />
+    <p>Song Name: </p> <input type="text" th:field="*{songname}" />
+    <p>Add Comment </p> <input type="text" th:field="*{addcomment}" />
+
+    <p><input type="submit" value="Add Singer" /></p>
+</form>
+
+<div th:if="${message!=null}">
+    <span th:text="${message}"/>
+</div>
+
+
+
+</body>
+</html>

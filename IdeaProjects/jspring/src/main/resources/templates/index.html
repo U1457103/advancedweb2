@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>J Singer's Website</title>
+</head>
+<body>
+
+
+<a href="/" th:href="@{/}">Home</a>
+<a href="/singer/register" th:href="@{/singer/register}">Add Singer</a>
+
+
+
+
+<table border="1px">
+    <tr>
+        <th>Singer Name</th>
+        <th>Song Name</th>
+        <th>Add Comment</th>
+        <th>Update Info</th>
+        <th>Delete Info</th>
+    </tr>
+    <tr th:each="singer : ${singers}">
+        <td th:text="${singer.singername}">Taylor Swift</td>
+        <td th:text="${singer.songname}">Blank Space</td>
+        <td th:text="${singer.addcomment}">Wonderful Singer</td>
+        <td><a href="#" th:href="@{/singer/update/}+${singer.id}">Update</a> </td>
+        <td><a href="#" th:href="@{/singer/delete/}+${singer.id}">Delete</a> </td>
+    </tr>
+</table>
+
+
+
+
+
+
+</body>
+</html>
