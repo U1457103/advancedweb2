@@ -1,14 +1,19 @@
 package com.demo.spring.controller;
 
 import com.demo.spring.Service.SingerService;
+import com.demo.spring.Service.UserService;
 import com.demo.spring.domain.Singer;
+import com.demo.spring.domain.SingerSearchForm;
+import com.demo.spring.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * Created by web on 18/04/17.
@@ -18,6 +23,9 @@ import javax.validation.Valid;
 public class SingerController {
     @Autowired
     SingerService singerService;
+
+    @Autowired
+    UserService userService;
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerView(Model model)
@@ -67,6 +75,47 @@ public class SingerController {
         singerService.delete(singer);
 
     return "redirect:/";
+
+    }
+
+
+    @RequestMapping(value ="/search", method = RequestMethod.GET)
+    public String searchView(Model model)
+    {
+        SingerSearchForm searchForm = new SingerSearchForm();
+        model.addAttribute("searchCriteria", searchForm);
+        return "singers/search";
+
+    }
+
+    @RequestMapping(value ="/search", method = RequestMethod.POST)
+    public String searchView(Model model, @ModelAttribute("searchCriteria") SingerSearchForm searchForm)
+    {
+        List<Singer> singers =  singerService.searchSingers(searchForm);
+        model.addAttribute("searchCriteria", searchForm);
+        model.addAttribute("singers", singers);
+        return "singers/search";
+
+    }
+
+
+    @RequestMapping(value= "/data", method = RequestMethod.GET)
+    public String graph(Model model, HttpSession session)
+    {
+
+        if(session.getAttribute("loginu")==null)
+        {
+            return "redirect:/user/loginu";
+        }
+
+
+        List<Singer> singers = singerService.findAll();
+        model.addAttribute("singers", singers);
+
+        List<User> users = userService.findAll();
+        model.addAttribute("users", users);
+
+        return "singers/data";
 
     }
 

@@ -2,6 +2,7 @@ package com.demo.spring.Service;
 
 import com.demo.spring.domain.Singer;
 import com.demo.spring.domain.SingerRepository;
+import com.demo.spring.domain.SingerSearchForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,18 @@ public class SingerService {
     public List<Singer> findAll(){ return singerRepository.findAll();}
 
     public void delete(Singer user) { singerRepository.delete(user);}
+
+
+    public List<Singer> searchSingers(SingerSearchForm singer)
+    {
+
+        return singerRepository.searchSingers(singer.getSingername(), singer.getSongname());
+
+    }
+
+
+
+
+
 
 }

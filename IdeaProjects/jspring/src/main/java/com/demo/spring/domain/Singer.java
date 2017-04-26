@@ -23,6 +23,15 @@ public class Singer {
     String addcomment;
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
     public String getSingername() {
         return singername;
     }
@@ -47,13 +56,7 @@ public class Singer {
         this.addcomment = addcomment;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
 
 

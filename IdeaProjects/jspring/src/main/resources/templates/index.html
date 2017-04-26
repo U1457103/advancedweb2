@@ -5,37 +5,6 @@
     <th:block th:include="fragments/header :: headercode"></th:block>
     <link href="../static/css/bootstrap.min.css"/>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
-        google.charts.load('current', {'packages':['corechart']});
-
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            // Create the data table.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Votes');
-            data.addColumn('number', 'Ratings');
-            data.addRows([
-                ['Taylor Swift', 10],
-                ['2 Pac', 5],
-                ['Eminem', 7],
-                ['Sekpta', 8],
-                ['Whiz Khalifa', 3]
-            ]);
-
-            // Set chart options
-            var options = {'title':'Top Rated Singers!',
-                'width':1000,
-                'height':600};
-
-            // Instantiate and draw our chart, passing in some options.
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-        }
-    </script>
 
 </head>
 <body>
@@ -43,9 +12,9 @@
 
 <div th:include="fragments/header :: header"></div>
 
-
-<div id="chart_div"></div>
-
+<p>
+    <a href="/singer/graph" th:href="@{/singer/data}">View Singers Graph</a>
+</p>
 
 
 <P>Singers Table</P>
@@ -69,24 +38,20 @@
 
 <a href="/singer/register" th:href="@{/singer/register}">Add Singer</a>
 
+<a href="/singer/search" th:href="@{/singer/search}">Search Singer</a>
 
-
-<P>Users Table</P>
+<P>Users On The Website</P>
 
 <table border="1px">
     <tr>
         <th> First Name</th>
         <th>Last Name</th>
-        <th>Password</th>
-        <th>Update User Info</th>
-        <th>Delete User</th>
+
     </tr>
     <tr th:each="user : ${users}">
         <td th:text="${user.firstname}">Bob</td>
         <td th:text="${user.lastname}">Lee</td>
-        <td th:text="${user.password}">password</td>
-        <td><a href="#" th:href="@{/user/updateu/}+${user.id}">Update</a> </td>
-        <td><a href="#" th:href="@{/user/delete/}+${user.id}">Delete</a> </td>
+
     </tr>
 </table>
 
