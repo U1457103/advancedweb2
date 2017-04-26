@@ -6,6 +6,7 @@ import com.demo.spring.domain.LoginForm;
 import com.demo.spring.domain.User;
 import com.demo.spring.domain.UserSearchForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,7 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
+    private String dateFormat;
 
 
     @RequestMapping(value = "/registeru", method = RequestMethod.GET)
@@ -38,7 +40,8 @@ public class UserController {
 
     public String register(Model model, @Valid @ModelAttribute("user") User user, BindingResult bindingResult)
     {
-        if(bindingResult.hasErrors()){
+        if(bindingResult.hasErrors())
+        {
             model.addAttribute("user", user);
             model.addAttribute("message", "Please fill in all Boxes.");
             return "user/registeru";
@@ -134,6 +137,8 @@ public class UserController {
         return "redirect:/";
 
     }
+
+
 
 
 

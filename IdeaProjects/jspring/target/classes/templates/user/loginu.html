@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
-    <title>User Login</title>
+    <th:block th:include="fragments/header :: headercode"></th:block>
+    <link href="../../static/css/bootstrap.min.css"/>
 </head>
 <body>
 
 <div th:include="fragments/header :: header"></div>
 
 
-
-
 <h2>Login</h2>
 
 <form action="#" th:action="@{/user/loginu}" th:object="${user}" method="post">
 
-    <p>UserName: </p> <input type="text" th:field="*{username}" />
-    <p>Password: </p> <input type="password" th:field="*{password}" />
-
-    <p><input type="submit" value="Login" /></p>
+    <label for="username">Username</label>:
+    <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+    <label for="password">Password</label>:
+    <input type="password" id="password" name="password" /> <br />
+    <input type="submit" value="Log in" />
 </form>
+
+
+
+
+
+
+
+
+
 
 <div th:if="${message!=null}">
     <span th:text="${message}"/>

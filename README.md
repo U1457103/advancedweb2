@@ -14,3 +14,5 @@ login and logout works
 Search Works (only for users at the moment) 
 
 Fragments Added 
+
+Header added, Up to date soo far

@@ -2,13 +2,49 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
-    <title>J Singer's Website</title>
+    <th:block th:include="fragments/header :: headercode"></th:block>
+    <link href="../static/css/bootstrap.min.css"/>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        google.charts.load('current', {'packages':['corechart']});
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Votes');
+            data.addColumn('number', 'Ratings');
+            data.addRows([
+                ['Taylor Swift', 10],
+                ['2 Pac', 5],
+                ['Eminem', 7],
+                ['Sekpta', 8],
+                ['Whiz Khalifa', 3]
+            ]);
+
+            // Set chart options
+            var options = {'title':'Top Rated Singers!',
+                'width':1000,
+                'height':600};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
 </head>
 <body>
 
 
 <div th:include="fragments/header :: header"></div>
 
+
+<div id="chart_div"></div>
 
 
 
@@ -55,7 +91,6 @@
 </table>
 
 <a href="/user/search" th:href="@{/user/search}">Search User</a>
-
 
 
 

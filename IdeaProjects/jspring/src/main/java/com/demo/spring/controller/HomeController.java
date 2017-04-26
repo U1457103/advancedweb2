@@ -1,5 +1,6 @@
 package com.demo.spring.controller;
 
+
 import com.demo.spring.Service.SingerService;
 import com.demo.spring.Service.UserService;
 import com.demo.spring.domain.Singer;
@@ -9,8 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.thymeleaf.context.WebContext;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -36,7 +43,6 @@ public class HomeController {
         }
 
 
-
     List<Singer> singers = singerService.findAll();
         model.addAttribute("singers", singers);
 
@@ -46,5 +52,7 @@ public class HomeController {
         return "index";
 
     }
+
+
 
 }

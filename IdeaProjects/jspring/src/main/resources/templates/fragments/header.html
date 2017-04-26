@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<div th:fragment="headercode">
+    <title>J Singer's Website</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</div>
+
+
+
+
 
 
 <div th:fragment="header">
 
 
-
     <ul>
+
+        <div sec:authorize="isAnonymous()">
         <a th:href="@{/}">Home</a>
         <a href="/user/registeru" th:href="@{/user/registeru}">Register User</a>
         <a href="/user/loginu" th:href="@{/user/loginu}">Login</a>
+        </div>
+        <div sec:authorize="isAuthenticated()">
         <a href="/user/logout" th:href="@{/user/logout}">Logout</a>
+        </div>
 
     </ul>
 
+    Current time : <div th:text="${execInfo.now.time}">Wed Apr 26 01:55:58 2017</div>
+
+
 </div>
+
 
 
 

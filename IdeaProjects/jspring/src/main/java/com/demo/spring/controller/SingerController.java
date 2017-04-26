@@ -19,7 +19,6 @@ public class SingerController {
     @Autowired
     SingerService singerService;
 
-
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerView(Model model)
     {
@@ -61,7 +60,7 @@ public class SingerController {
 
     @RequestMapping(value ="/delete/{singer}", method =RequestMethod.GET)
 
-    public String delete(@PathVariable Singer singer)
+    public String delete(@PathVariable Singer singer, Long id)
     {
     String name= singer.getSingername()+" "+singer.getSongname();
 
@@ -72,7 +71,7 @@ public class SingerController {
     }
 
 
-
-
-
 }
+
+
+
