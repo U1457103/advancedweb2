@@ -128,18 +128,21 @@ public class UserController {
 
     @RequestMapping(value ="/delete/{user}", method =RequestMethod.GET)
 
-    public String delete(@PathVariable User user)
-    {
-        String name= user.getFirstname()+" "+user.getLastname();
 
-        userService.delete(user);
+    public String delete(@PathVariable User user, HttpSession session)
+    {
+
+        if(session.getAttribute("loginu") !=null && session.getAttribute("loginu")=="admin")
+        {
+
+
+            return "redirect:/";
+        }
+
+        session.setAttribute("loginu", true);
 
         return "redirect:/";
-
     }
-
-
-
 
 
 
