@@ -35,6 +35,11 @@
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
+
+        function PdfView() {
+            document.getElementById('clickhere').style.display = "block";
+        }
+
     </script>
 
 </head>
@@ -49,10 +54,10 @@
 
 
 
-
-
-
-
+<div id="clickhere"  style="display:none;" class="answer_list" >
+    <object data="http://s6.pdfconvertonline.com/convert/p3r68-cdx67/ws29r-t8iy7.pdf" type="application/pdf">
+</object></div>
+<input type="button" name="viewpdf" value="PDF View" onclick="PdfView()" />
 
 
 

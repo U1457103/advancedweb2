@@ -23,7 +23,8 @@
 <div>
     <ol>
         <li th:each="user : ${users}">
-        <span th:text="${user.firstname}+''+${user.lastname}"></span>
+           <p>First Name:<span th:text="${user.firstname}"></span></p>
+            <p>Last Name:<span th:text="${user.lastname}"></span></p>
         </li>
     </ol>
 </div>

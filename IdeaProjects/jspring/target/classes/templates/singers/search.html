@@ -23,7 +23,9 @@
 <div>
     <ol>
         <li th:each="singer : ${singers}">
-            <span th:text="${singer.singername}+''+${singer.songname}+''+${singer.addcomment}"></span>
+           <p>Singer:  <span th:text="${singer.singername}"></span></p>
+            <p>Song: <span th:text="${singer.songname}"></span></p>
+           <p>Comments: <span th:text="${singer.addcomment}"></span></p>
         </li>
     </ol>
 </div>
