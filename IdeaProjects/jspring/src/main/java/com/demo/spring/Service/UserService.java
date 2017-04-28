@@ -22,7 +22,16 @@ public class UserService {
 
     public List<User> findAll(){ return userRepository.findAll();}
 
-    public void delete(User user) { userRepository.delete(user);}
+
+
+
+    public void delete(User user)
+
+    {
+        userRepository.delete(user);
+    }
+
+
 
     public List<User> validateLogin(LoginForm user){
 
