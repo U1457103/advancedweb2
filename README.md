@@ -19,4 +19,6 @@ Header added, Up to date soo far
 
 Updated homepage and added new page for the graph 
 
-Added PDF, PDF Print , Save And View As PDF 
+Added PDF, PDF Print , Save And View As PDF (DID Not work so removed)
+
+Testing Facebook login!!
