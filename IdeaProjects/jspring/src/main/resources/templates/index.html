@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
     <th:block th:include="fragments/header :: headercode"></th:block>
     <link href="../static/css/bootstrap.min.css"/>
-
-
 </head>
 <body>
 
 
+
+User Logged In: <span th:text=" ${session.username == null}  ?: 'user'">Logged in</span>
+
 <div th:include="fragments/header :: header"></div>
 
-<p>
-    <a href="/singer/graph" th:href="@{/singer/data}">View Singers Graph</a>
-</p>
-
+<p><a href="/singer/graph" th:href="@{/singer/data}">View Singers Graph</a></p>
 
 
 <P>Singers Table</P>
-
 <table border="1px">
     <tr>
         <th>Singer Name</th>
@@ -38,8 +34,10 @@
 </table>
 
 <a href="/singer/register" th:href="@{/singer/register}">Add Singer</a>
-
 <a href="/singer/search" th:href="@{/singer/search}">Search Singer</a>
+
+
+
 
 <P>Users On The Website</P>
 
@@ -47,7 +45,6 @@
     <tr>
         <th> First Name</th>
         <th>Last Name</th>
-
     </tr>
     <tr th:each="user : ${users}">
         <td th:text="${user.firstname}">Bob</td>
@@ -57,14 +54,6 @@
 </table>
 
 <a href="/user/search" th:href="@{/user/search}">Search User</a>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

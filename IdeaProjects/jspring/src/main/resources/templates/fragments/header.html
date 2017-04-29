@@ -10,23 +10,18 @@
 </div>
 
 
-
-
-
-
 <div th:fragment="header">
     <ul>
 
         <a th:href="@{/}">Home</a>
         <a href="/user/registeru" th:href="@{/user/registeru}">Register User</a>
         <a href="/user/loginu" th:href="@{/user/loginu}">Login</a>
-
-
         <a href="/user/logout" th:href="@{/user/logout}">Logout</a>
 
     </ul>
     Current time : <div th:text="${execInfo.now.time}">Wed Apr 26 01:55:58 2017</div>
 </div>
+
 
 
 

@@ -36,6 +36,8 @@ public class SingerController {
 
     }
 
+    // Users can add a songname singer and add comments
+
     @RequestMapping(value = "/register", method = RequestMethod.POST)
 
     public String register(Model model, @Valid @ModelAttribute("singer") Singer singer, BindingResult bindingResult)
@@ -50,6 +52,8 @@ public class SingerController {
         return "redirect:/";
     }
 
+    // Validation is put in place to ensure all boxes are filled in
+
     @RequestMapping(value ="/update/{u}", method = RequestMethod.GET)
     public String updateView(Model model, @PathVariable Singer u){
 
@@ -58,6 +62,8 @@ public class SingerController {
 
     }
 
+    // CRUD, user can edit their post
+
     @RequestMapping(value ="/update", method = RequestMethod.POST)
     public String update(Model model, @ModelAttribute("singer") Singer u){
 
@@ -65,6 +71,8 @@ public class SingerController {
        return "redirect:/";
 
     }
+
+    // CRUD , Edited post is saved and user is re-directed to updated info on home page
 
     @RequestMapping(value ="/delete/{singer}", method =RequestMethod.GET)
 
@@ -78,6 +86,8 @@ public class SingerController {
 
     }
 
+    // CRUD, user is able to delete their post
+
 
     @RequestMapping(value ="/search", method = RequestMethod.GET)
     public String searchView(Model model)
@@ -88,6 +98,8 @@ public class SingerController {
 
     }
 
+    // User enters search result
+
     @RequestMapping(value ="/search", method = RequestMethod.POST)
     public String searchView(Model model, @ModelAttribute("searchCriteria") SingerSearchForm searchForm)
     {
@@ -97,6 +109,7 @@ public class SingerController {
         return "singers/search";
 
     }
+    // User posts search button and is displayed the results of the songs info
 
 
     @RequestMapping(value= "/data", method = RequestMethod.GET)
@@ -108,16 +121,11 @@ public class SingerController {
             return "redirect:/user/loginu";
         }
 
-
-        List<Singer> singers = singerService.findAll();
-        model.addAttribute("singers", singers);
-
-        List<User> users = userService.findAll();
-        model.addAttribute("users", users);
-
         return "singers/data";
 
     }
+
+    // Graph is displayed to the user
 
 
 }

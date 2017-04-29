@@ -26,6 +26,8 @@ public class UserController {
     UserService userService;
     private String dateFormat;
 
+    // Shows the date on every page to the user
+
 
     @RequestMapping(value = "/registeru", method = RequestMethod.GET)
     public String registerView(Model model)
@@ -35,6 +37,8 @@ public class UserController {
         return "user/registeru";
 
     }
+
+    // register for the users
 
     @RequestMapping(value = "/registeru", method = RequestMethod.POST)
 
@@ -51,6 +55,8 @@ public class UserController {
         return "redirect:/";
     }
 
+    // Validation put in place to ensure all of the boxes are filled in
+
     @RequestMapping(value = "/loginu", method = RequestMethod.GET)
     public String loginView(Model model)
     {
@@ -59,6 +65,9 @@ public class UserController {
         return "user/loginu";
 
     }
+
+
+    // Login for  users
 
     @RequestMapping(value = "/loginu", method = RequestMethod.POST)
 
@@ -82,6 +91,7 @@ public class UserController {
         return "redirect:/";
     }
 
+    // Validation to ensure correct details are put in aswell as to ensure users fill in all fields
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logoutView(Model model, HttpSession session)
@@ -91,6 +101,8 @@ public class UserController {
 
     }
 
+    // Ensure the user is logged out
+
     @RequestMapping(value ="/search", method = RequestMethod.GET)
     public String searchView(Model model)
     {
@@ -99,6 +111,8 @@ public class UserController {
         return "user/search";
 
     }
+
+    // Users are able to search for other users on the website
 
     @RequestMapping(value ="/search", method = RequestMethod.POST)
     public String searchView(Model model, @ModelAttribute("searchCriteria") UserSearchForm searchForm)
@@ -110,6 +124,8 @@ public class UserController {
 
     }
 
+    // Search results are displayed to the user
+
     @RequestMapping(value ="/updateu/{u}", method = RequestMethod.GET)
     public String updateView(Model model, @PathVariable User u){
 
@@ -117,6 +133,8 @@ public class UserController {
         return "user/updateu";
 
     }
+
+
 
     @RequestMapping(value ="/updateu", method = RequestMethod.POST)
     public String update(Model model, @ModelAttribute("user") User u){
@@ -126,25 +144,21 @@ public class UserController {
 
     }
 
+
     @RequestMapping(value ="/delete/{user}", method =RequestMethod.GET)
 
 
     public String delete(@PathVariable User user, HttpSession session)
     {
-
         if(session.getAttribute("loginu") !=null && session.getAttribute("loginu")=="admin")
         {
-
-
             return "redirect:/";
         }
-
         session.setAttribute("loginu", true);
-
         return "redirect:/";
     }
 
-
+    // Tested code for only admins to only delete users, sadly did not work.
 
 
 }

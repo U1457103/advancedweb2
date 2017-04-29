@@ -27,3 +27,5 @@ public class LoginForm {
     @NotEmpty
     String password;
 }
+
+// User cannot leave username and password empty.

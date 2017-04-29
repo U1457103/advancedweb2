@@ -17,3 +17,6 @@ public interface UserRepository  extends JpaRepository<User, Long>{
     List<User> searchUsers(String firstname, String lastname);
 
 }
+
+
+// Query to search all of the users, type their firstname or lastname to get their info

@@ -26,3 +26,6 @@ public class UserSearchForm {
     String lastname;
 
 }
+
+
+// User can search for other users by entering their firstname or lastname and the info will be displayed to them.

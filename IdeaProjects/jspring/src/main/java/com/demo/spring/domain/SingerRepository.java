@@ -17,6 +17,6 @@ public interface SingerRepository extends JpaRepository<Singer, Long>{
     List<Singer> searchSingers(String singername, String songname);
 
 
-
+// Search query displays all of the singers info.
 
 }

@@ -57,7 +57,7 @@ public class User {
     }
 
 
-
+// User register, Must fill in all of these fields. Id is auto generated and each user has a unique id
 
 
 }

@@ -10,11 +10,15 @@
 <body>
 
 
+
+User Logged In: <span th:text=" ${session.username == null}  ?: 'user'">Logged in</span>
+
 <div th:include="fragments/header :: header"></div>
 
 <p>
     <a href="/singer/graph" th:href="@{/singer/data}">View Singers Graph</a>
 </p>
+
 
 
 <P>Singers Table</P>

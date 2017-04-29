@@ -9,11 +9,8 @@
     <script type="text/javascript">
 
         google.charts.load('current', {'packages':['corechart']});
-
         google.charts.setOnLoadCallback(drawChart);
-
         function drawChart() {
-
             // Create the data table.
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Votes');
@@ -36,23 +33,14 @@
             chart.draw(data, options);
         }
 
-
-
     </script>
-
 
 </head>
 <body>
 
-
 <div th:include="fragments/header :: header"></div>
 
-
 <div id="chart_div"></div>
-
-
-
-
 
 </body>
 </html>

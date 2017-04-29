@@ -58,7 +58,7 @@ public class Singer {
 
 
 
-
+// Singers info, User can add/edit and delete on the website.
 
 
 

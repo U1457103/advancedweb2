@@ -26,3 +26,6 @@ public class SingerSearchForm {
     String songname;
 
 }
+
+
+// Enter the singername or song name to display the info
